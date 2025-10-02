@@ -11,8 +11,9 @@ type VideoGame = {
 
 export default function VideoGameList({ videoGames }: { videoGames: VideoGame[] }) {
 
+    //This will store the users chosen Genre
     const [genre, setGenre] = useState("select")
-
+    // This filters the Video Game Data to find only games matching the genre the user chose
     const filteredGame = videoGames.filter((videoGame) => { return videoGame.genre == genre }
     )
 
@@ -67,6 +68,7 @@ export default function VideoGameList({ videoGames }: { videoGames: VideoGame[] 
                 </select>
             </div>
 
+            {/* Ternary operator to only display the genre the user chooses */}
             {genre == "select" ? <p style={{
                 textAlign: "center",
                 marginTop: "25px"

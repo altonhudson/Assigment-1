@@ -1,6 +1,7 @@
 import VideoGameCard from "../components/VideoGameCard";
 import { useState } from "react";
 
+
 type VideoGame = {
     title: string;
     releaseYear: number;
@@ -10,17 +11,8 @@ type VideoGame = {
 };
 
 export default function VideoGameCounter({ videoGames }: { videoGames: VideoGame[] }) {
+
     const [likeCount, setLikeCount] = useState(0)
-    const [disCount, setdisCount] = useState(0)
-
-    console.log(videoGames);
-
-    const buttonStyle = {
-        backgroundColor: "lightslategray",
-        height: "50px",
-        width: "200px",
-        borderRadius: "10px"
-    }
 
     return (
         <div>

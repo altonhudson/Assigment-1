@@ -8,6 +8,7 @@ export default function VideoGameWishList() {
   const [wishList, setWishList] = useState<string[]>([]);
   const error = "Please Enter A Valid Game Name"
 
+  //This function is to update the wishlist array and make sure the user's input is valid
   const wishListSubmit = (e: any) => {
     e.preventDefault()
     if (gameName == "") {

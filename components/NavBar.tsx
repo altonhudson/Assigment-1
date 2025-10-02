@@ -1,5 +1,6 @@
 export default function NavBar({page, setPage}: any) {
 
+    //This method is to keep track of the page the users clicks and store it in the Page state
 const handleNavClick = (e: any)  => {
     const newPage = e.target.innerText;
     setPage(newPage)

@@ -8,7 +8,16 @@ import VideoGameWishList from "./VideoGameWishList";
 export default function Home() {
   const [page, setPage] = useState("")
 
-  const videoGamesArray = [
+  type VideoGame = {
+    title: string;
+    releaseYear: number;
+    developer: string;
+    genre: string;
+    image: string;
+};
+
+  //Video Game Data
+  const videoGamesArray: VideoGame[] = [
   {
     title: "The Witcher 3: Wild Hunt",
     releaseYear: 2015,
@@ -161,12 +170,10 @@ export default function Home() {
         fontWeight: 900,
         fontFamily: "Arial",
         textTransform: "uppercase",
-        marginTop: "25px"
+        marginTop: "25px",
+        marginBottom: "25px"
       }}>Welcome to Your Video Game Tracker! </h1>
       
-      <br />
-      <br />
-      <br />
       <NavBar page={page} setPage={setPage}/>
       {page == "Video Game List" ? <VideoGameList videoGames={videoGamesArray}/> : page == "Video Game Counter" ? <VideoGameCounter videoGames={videoGamesArray} /> : page == "Video Game Wish List" ? <VideoGameWishList /> : null}
     </div>
